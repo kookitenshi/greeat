@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Metamorphous&family=Nunito:wght@200;300&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Greeat - Coming Soon</title>
@@ -10,15 +14,29 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #E6FFFD; /* Updated background color */
+      background-color: #99F3BD; /* Updated background color */
     }
 
     /* Header styles */
     header {
-      background-color: #B4E197;
+      background-color: #0A481E; /* Updated header color */
       color: #fff;
       padding: 10px;
       text-align: center;
+      text-shadow: 0 0 5px #187c2e; /* Added text shadow for outline effect */
+      font-family: 'Nunito', sans-serif;
+      opacity: 0;
+      animation: fade-in-header 1.5s ease-in-out forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fade-in-header {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
     .logo img {
@@ -28,6 +46,19 @@
       margin-left: auto;
       margin-right: auto;
       display: block;
+      border-radius: 50px; /* Updated border radius */
+      opacity: 0;
+      animation: fade-in-logo 1s ease-in-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fade-in-logo {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
     /* Main content styles */
@@ -36,11 +67,68 @@
       text-align: center;
     }
 
+    .fade-in-paragraph {
+      opacity: 0;
+      animation: fade-in-paragraph 1.5s ease-in-out forwards;
+      animation-delay: 1.9s;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    @keyframes fade-in-paragraph {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Button styles */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 0 5px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #28A745;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0;
+      animation: fade-in-button 1.5s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fade-in-button {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
     /* Footer styles */
-    footer {
-      background-color: #f5f5f5;
+    footer{
+      background-color: #23da91; /* Updated footer color */
       padding: 10px;
       text-align: center;
+      opacity: 0;
+      animation: fade-in-footer 1.5s ease-in-out forwards;
+      animation-delay: 3s;
+    }
+
+    @keyframes fade-in-footer {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -51,20 +139,35 @@
 
   <main>
     <div class="logo">
-      <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/697/original/greeat.png?1684677465" alt="Greeat logo">
+      <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/702/original/greeat.png?1684684272" alt="Greeat logo">
     </div>
-    <p>Greeat is coming soon! <br>
+    <p class="fade-in-paragraph">Greeat is coming soon! <br>
          Unlike other platforms, Greeat is a social media that prioritizes uplifting and positive content. <br>
          Our unique algorithm is designed to filter out upsetting or controversial content, ensuring a platform that promotes healthy connections and uplifts people from all around the world. <br> 
          Stay tuned for the launch of Greeat and get ready to experience a refreshing social media experience.</p>
+    
+    <div class="button-container">
+      <a href="#" class="button fade-in-paragraph" onclick="showEmailPopup()">Sign up as one of the first users</a>
+      <a href="https://twitter.com/greeat_me" target="_blank" class="button fade-in-paragraph">Follow us on Twitter</a>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2023 Greeat. All rights reserved.</p>
   </footer>
+
+  <script>
+    function showEmailPopup() {
+      var email = prompt("Please let us know your e-mail address");
+      if (email) {
+        // Here you can add code to store the user's email address
+        console.log("New user email:", email);
+        alert("Thank you! We'll keep you updated :)");
+      }
+    }
+  </script>
 </body>
 </html>
-
 
 
 
